@@ -1,5 +1,8 @@
 package com.pan_secure.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -30,11 +33,13 @@ public class Card {
 	public void setTokenId(Integer tokenId) {
 		this.tokenId = tokenId;
 	}
-
+    
+	@JsonIgnore
 	public String getPan() {
 		return pan;
 	}
-
+    
+	@JsonProperty
 	public void setPan(String pan) {
 		this.pan = pan;
 	}
